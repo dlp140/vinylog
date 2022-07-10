@@ -13,6 +13,7 @@ class Record(models.Model):
     description = models.CharField(max_length=500)
     notes = models.CharField(max_length=200)
     condition = models.CharField(max_length=100)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.artist + " - " + self.title
@@ -23,7 +24,7 @@ class Record(models.Model):
 class Collection(models.Model):
     date_added = models.DateField()
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    record = models.ForeignKey(Record, on_delete=models.CASCADE)
+    record = models.ManyToManyField(Record)
 
     class Meta:
         ordering = ['-date_added']
