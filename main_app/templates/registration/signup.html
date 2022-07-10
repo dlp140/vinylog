@@ -1,0 +1,20 @@
+{% extends 'base.html' %} {% block content %}
+
+<h1>Sign Up</h1>
+{% if error_messages %}
+<h5 class="red-text">{{ error_messages }}</h5>
+{% endif %}
+<form action="" method="POST">
+  {% csrf_token %} {{ form.as_p }}
+  <input type="submit" value="Sign Up" class="btn blue" />
+  <input type="hidden" name="next" value="{{ next }}" />
+</form>
+
+{% endblock %}
+<script>
+  const ul = document.getElementByClass("errorlist")
+  const first = ul.firstChild
+  first.style.backgroundColor = "black"
+  console.log(`ul = ${ul}`)
+  console.log(`first = ${first}`)
+</script>
