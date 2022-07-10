@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.shortcuts import render
 from .models import Record, Collection
@@ -54,7 +54,7 @@ def signup(request):
       user = form.save()
       # This is how we log a user in via code
       login(request, user)
-      return redirect('index')
+      return redirect('records')
     except:
       error_messages = form.errors
   #A body POST or a GET request, so render signup.html with an empty form
