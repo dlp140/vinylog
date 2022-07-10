@@ -1,0 +1,21 @@
+{% extends 'base.html' %} {% block content %}
+
+<h1>Record Details</h1>
+
+<div class="card">
+  <div class="card-content">
+    <span class="card-title">{{ record.title}} - {{ record.artist }}</span>
+    <p>Release Date: {{ record.release_date }}</p>
+    {% if record.image %}
+    <img src="{{ record.image }}" />
+    {% else %}
+    <p>Cover art missing</p>
+    {% endif %}
+  </div>
+  <div class="card-action">
+    <a href="{% url 'records_update' record.id %}">Edit</a>
+    <a href="{% url 'records_delete' record.id %}">Delete</a>
+  </div>
+</div>
+
+{% endblock %}
