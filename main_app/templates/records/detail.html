@@ -26,6 +26,14 @@
       <div class="card-content">
         <span class="card-title">{{ record.title}} - {{ record.artist }}</span>
         <p>Release Date: {{ record.release_date }}</p>
+      </br>
+        <p>Genre: {{ record.genre }}</p>
+      </br>
+        <p>Description: {{ record.description }}</p>
+      </br>
+        <p>Notes: {{ record.notes }}</p>
+      </br>
+        <p>Condition: {{ record.condition }}</p>
       </div>
       <div class="card-action">
         <a href="{% url 'records_update' record.id %}">Edit</a>
