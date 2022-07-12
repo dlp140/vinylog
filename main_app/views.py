@@ -9,6 +9,8 @@ from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic import ListView
+from django.views.generic.detail import DetailView
 import uuid
 import boto3
 
@@ -23,11 +25,23 @@ def about(request):
 
 def records(request):
     records = Record.objects.all()
-    return render(request, 'records/index.html', { 'records': records })
+    photos = Photo.objects.all()
+    return render(request, 'records/index.html', { 'records': records, 'photos': photos })
 
+def my_records(request):
+  records = Record.objects.filter(user=request.user)
+  return render(request, 'records/myrecords.html', { 'records': records })
+
+# Work version without collection integration
 def records_detail(request, record_id):
     record = Record.objects.get(id=record_id)
     return render(request, 'records/detail.html', { 'record': record })
+
+# Collection integration
+# def records_detail(request, record_id):
+#     record = Record.objects.get(id=record_id)
+#     collections_record_not_in = Collection.objects.exclude(id__in = record.collections.all().values_list('id'))
+#     return render(request, 'records/detail.html', { 'record': record, 'collections': collections_record_not_in })
 
 class RecordCreate(LoginRequiredMixin, CreateView):
     model = Record
@@ -49,6 +63,24 @@ class RecordDelete(LoginRequiredMixin, DeleteView):
 def collections(request):
     collections = Collection.objects.all()
     return render(request, 'collections/index.html', { 'collections': collections })
+
+
+def assoc_record(request, collection_id, record_id):
+    Collection.objects.get(id=collection_id).records.add(record_id)
+    return redirect('detail', record_id=record_id)
+
+# def collections_detail(request, collection_id):
+#     collection = Collection.objects.get(collection_id)
+#     return render(request, 'collections/detail.html', { 'collection': collection})
+
+# class CollectionList (ListView):
+#     model = Collection
+#     template_name = 'collections/index.html'
+
+class CollectionDetail (DetailView):
+    model = Collection
+    template_name = 'collections/detail.html'
+
 
 @login_required
 def add_photo(request, record_id):

@@ -1,0 +1,15 @@
+{% extends 'base.html' %} {% block content %}
+
+<h1>{{ collection.user }}'s Collection</h1>
+{{ collection.record }}
+
+<p>Here:</p>
+{% for records in collection.records %}
+
+<div class="card">
+  <div class="card-content">
+    <span class="card-title"> {{ records.title }}</span>
+  </div>
+</div>
+
+{% endfor %} {% endblock %}

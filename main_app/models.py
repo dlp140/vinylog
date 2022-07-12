@@ -2,6 +2,7 @@ from pyexpat import model
 from django.db import models
 from django.urls import reverse
 from django.contrib.auth.models import User
+# from .models import Photo
 
 # Create your models here.
 class Record(models.Model):
@@ -14,12 +15,17 @@ class Record(models.Model):
     notes = models.CharField(max_length=200)
     condition = models.CharField(max_length=100)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    # date_added = models.DateField()
+    # photo = models.ForeignKey(Photo, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.artist + " - " + self.title
 
     def get_absolute_url(self):
         return reverse('detail', kwargs={'record_id': self.id})
+
+    class Meta:
+        ordering = ['-release_date']
 
 class Collection(models.Model):
     date_added = models.DateField()
@@ -28,6 +34,12 @@ class Collection(models.Model):
 
     class Meta:
         ordering = ['-date_added']
+
+    def __str__(self):
+        return f"{self.user}'s collection"
+    
+    def get_absolute_url(self):
+        return reverse('collections_detail', kwargs={'pk': self.id})
 
 class Photo(models.Model):
     url = models.CharField(max_length=200)
