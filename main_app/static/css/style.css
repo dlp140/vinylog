@@ -36,6 +36,11 @@ nav {
   color: white;
 }
 
+label,
+input {
+  color: white;
+}
+
 a {
   color: #6d4e7a;
 }

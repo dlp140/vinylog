@@ -15,6 +15,6 @@ urlpatterns = [
     path('collections/<int:pk>/', views.CollectionDetail.as_view(), name='collections_detail'),
     path('accounts/signup', views.signup, name='signup'),
     path('records/<int:record_id>/add_photo', views.add_photo, name='add_photo'),
-    path('collections/<int:collection_id>/assoc_record/<int:record_id>/', views.assoc_record, name='assoc_record'),
+    path('records/<int:collection_id>/assoc_record/<int:record_id>/', views.assoc_record, name='assoc_record'),
     path('records/<int:record_id>/assoc_record/<int:collection_id>/', views.assoc_record, name='assoc_record'),
 ]
