@@ -4,10 +4,13 @@
 <p>{{ collection.records.all }}</p>
 {% for record in collection.record.all %}
 
-<div class="card">
+<div class="card index-card">
   <a href="{% url 'detail' record.id %}">
     <div class="card-content">
-      <span class="card-title">{{ record.artist }} - {{ record.title }}</span>
+      <span class="card-title"
+        ><strong>{{ record.artist }}</strong> -
+        <em>{{ record.title }}</em></span
+      >
       <p>Release Date: {{ record.release_date }}</p>
     </div>
   </a>

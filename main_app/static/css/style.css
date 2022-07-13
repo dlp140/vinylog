@@ -45,15 +45,20 @@ a {
   color: #6d4e7a;
 }
 
-.index-card:hover {
-  border: 5px solid black;
+.index-card {
+  border-radius: 20px;
 }
 
-.responsive-img {
+.index-card:hover {
   border: 1px solid black;
 }
+
+/* .responsive-img {
+  border: 1px solid black;
+} */
+
 .datepicker-date-display,
-.is-today.is-selected {
+.is-selected {
   background-color: #6d4e7a;
 }
 .btn-flat.datepicker-cancel.waves-effect,
@@ -61,6 +66,40 @@ a {
   color: #6d4e7a;
 }
 
+.datepicker-table td.is-today {
+  background-color: #6d4e7a;
+}
+
 .yellow {
   color: black;
+}
+
+#dropdown1 {
+  background-color: #6d4e7a;
+  color: white;
+}
+
+body > main > form > ul > li {
+  color: white;
+}
+
+body > main > form > p > span {
+  color: white;
+}
+
+.link {
+  color: white;
+}
+
+.logout:hover {
+  background-color: red;
+}
+
+.login:hover {
+  background-color: green;
+}
+
+.signup:hover {
+  color: black;
+  background-color: yellow;
 }
