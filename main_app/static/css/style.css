@@ -47,3 +47,15 @@ a {
 .responsive-img {
   border: 1px solid black;
 }
+.datepicker-date-display,
+.is-today.is-selected {
+  background-color: #6d4e7a;
+}
+.btn-flat.datepicker-cancel.waves-effect,
+.btn-flat.datepicker-done.waves-effect {
+  color: #6d4e7a;
+}
+
+.yellow {
+  color: black;
+}
