@@ -32,21 +32,21 @@ def my_records(request):
   records = Record.objects.filter(user=request.user)
   return render(request, 'records/myrecords.html', { 'records': records })
 
-# Work version without collection integration
-def records_detail(request, record_id):
-    record = Record.objects.get(id=record_id)
-    collection = Collection.objects.filter()
-    return render(request, 'records/detail.html', { 'record': record, 'collection': collection })
-
-# Collection integration
+# # Work version without collection integration
 # def records_detail(request, record_id):
 #     record = Record.objects.get(id=record_id)
-#     collections_record_not_in = Collection.objects.exclude(id__in = record.collections.all().values_list('id'))
-#     return render(request, 'records/detail.html', { 'record': record, 'collections': collections_record_not_in })
+#     collection = Collection.objects.filter()
+#     return render(request, 'records/detail.html', { 'record': record, 'collection': collection })
+
+# Collection integration
+def records_detail(request, record_id):
+    record = Record.objects.get(id=record_id)
+    collections = Collection.objects.all()
+    return render(request, 'records/detail.html', { 'record': record, 'collections': collections})
 
 class RecordCreate(LoginRequiredMixin, CreateView):
     model = Record
-    fields = ['artist', 'title', 'release_date', 'genre', 'description', 'notes', 'condition' ]
+    fields = ['artist', 'title', 'release_date', 'genre', 'description']
     succes_url = '/records/'
 
     def form_valid(self, form):

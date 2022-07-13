@@ -1,10 +1,10 @@
 {% extends 'base.html' %} {% block content %}
 
-<h1>Collections List</h1>
+<h1 class="no-card">Collections List</h1>
 
 {% for collection in collections %}
 
-<div class="card">
+<div class="card" class="index-card">
   <a href="{% url 'collections_detail' collection.id %}">
     <div class="card-content">
       <span class="card-title">{{ collection.user }}'s Collection</span>

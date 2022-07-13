@@ -30,7 +30,6 @@ class Collection(models.Model):
     record = models.ManyToManyField(Record)
     # notes = models.CharField(max_length=200)
     # condition = models.CharField(max_length=100)
-    # date_added = models.DateField()
 
     class Meta:
         ordering = ['-date_added'] 

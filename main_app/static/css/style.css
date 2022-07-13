@@ -31,3 +31,19 @@ header {
 nav {
   background-color: #6d4e7a;
 }
+
+.no-card {
+  color: white;
+}
+
+a {
+  color: #6d4e7a;
+}
+
+.index-card:hover {
+  border: 5px solid black;
+}
+
+.responsive-img {
+  border: 1px solid black;
+}

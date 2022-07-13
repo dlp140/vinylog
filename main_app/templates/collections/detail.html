@@ -1,6 +1,6 @@
 {% extends 'base.html' %} {% block content %}
 
-<h1>{{ collection.user }}'s Collection</h1>
+<h1 class="no-card">{{ collection.user }}'s Collection</h1>
 <p>{{ collection.records.all }}</p>
 {% for record in collection.record.all %}
 
