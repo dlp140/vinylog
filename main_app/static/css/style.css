@@ -103,3 +103,11 @@ body > main > form > p > span {
   color: black;
   background-color: yellow;
 }
+
+.dropdown-content li > a {
+  color: white;
+}
+
+.dropdown-content li > a:hover {
+  background-color: #6d4e7a;
+}
