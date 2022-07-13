@@ -55,12 +55,7 @@
 {% endfor %}
 {% endfor %} -->
 <p>Add to your collection:</p>
-<div class="card-action">
-  <form action="{% url 'assoc_record' record.id collection.id %}" method="post">
-    {% csrf_token %}
-    <button type="submit" class="btn">Add</button>
-  </form>
-</div>
+
 <hr />
 <p>{{ collections.all.records }}</p>
 <h5 class="no-card">{{ record.title }} is in the following user's collections:</h5>
