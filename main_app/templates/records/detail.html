@@ -57,11 +57,11 @@
 {% endif %}
 {% endfor %}
 {% endfor %} -->
-<p>Add to your collection:</p>
+<!-- <p>Add to your collection:</p> -->
 
 <hr />
 <p>{{ collections.all.records }}</p>
-<h5 class="no-card">{{ record.title }} is in the following user's collections:</h5>
+<h5 class="no-card"><em>{{ record.title }} </em> is in the following user's collections:</h5>
 {% for collection in collections %}
 {% for item in collection.record.all %}
 {% if item == record %}
@@ -77,11 +77,11 @@
 {% endif %}
 {% endfor %}
 {% endfor %}
-<h5 class="no-card"><s>{{ record.title }} is not in anyone's collection</s></h5>
+<!-- <h5 class="no-card"><s>{{ record.title }} is not in anyone's collection</s></h5> -->
 <div class="row">
   <div class="col s12">
     <p class="no-card">{% if collection.records.count %}</p>
-    <h5 class="no-card">{{ record.title }} is in the following user's Collections:</h5>
+    <h5 class="no-card"><em>{{ record.title }}</em> is in the following user's Collections:</h5>
     {% for collection in record.collections.all %}
     <div class="card">
       <div class="card-content">

@@ -111,3 +111,12 @@ body > main > form > p > span {
 .dropdown-content li > a:hover {
   background-color: #6d4e7a;
 }
+* {
+  font-family: Acme;
+}
+h1 {
+  font-family: Play;
+}
+.brand-logo {
+  font-family: Sacramento;
+}
