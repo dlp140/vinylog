@@ -3,6 +3,7 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  background-color: #6d4e7a;
 }
 
 main {
@@ -12,4 +13,21 @@ main {
 footer {
   padding-top: 0;
   text-align: right;
+  background-color: #6d4e7a;
+}
+
+.page-footer {
+  background-color: #6d4e7a;
+}
+
+.nav-wrapper {
+  background-color: #6d4e7a;
+}
+
+header {
+  background-color: #6d4e7a;
+}
+
+nav {
+  background-color: #6d4e7a;
 }

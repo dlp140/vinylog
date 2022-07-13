@@ -12,10 +12,7 @@ class Record(models.Model):
     genre = models.CharField(max_length=100)
     image = models.CharField(max_length=100)
     description = models.CharField(max_length=500)
-    notes = models.CharField(max_length=200)
-    condition = models.CharField(max_length=100)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    # date_added = models.DateField()
     # photo = models.ForeignKey(Photo, on_delete=models.CASCADE)
 
     def __str__(self):
@@ -31,9 +28,12 @@ class Collection(models.Model):
     date_added = models.DateField()
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     record = models.ManyToManyField(Record)
+    # notes = models.CharField(max_length=200)
+    # condition = models.CharField(max_length=100)
+    # date_added = models.DateField()
 
     class Meta:
-        ordering = ['-date_added']
+        ordering = ['-date_added'] 
 
     def __str__(self):
         return f"{self.user}'s collection"

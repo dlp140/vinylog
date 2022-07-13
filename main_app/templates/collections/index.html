@@ -3,6 +3,7 @@
 <h1>Collections List</h1>
 
 {% for collection in collections %}
+
 <div class="card">
   <a href="{% url 'collections_detail' collection.id %}">
     <div class="card-content">

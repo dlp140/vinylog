@@ -8,32 +8,29 @@
     <img class="responsive-img card-panel" src="{{ photo.url }}" />
     {% empty %}
     <div class="card-panel teal-text center-align">Cover Art Missing</div>
-    {% endfor %}
     <form
-      action="{% url 'add_photo' record.id %}"
-      enctype="multipart/form-data"
-      method="POST"
-      class="card-panel"
+    action="{% url 'add_photo' record.id %}"
+    enctype="multipart/form-data"
+    method="POST"
+    class="card-panel"
     >
-      {% csrf_token %}
-      <input type="file" name="photo-file" />
-      <br /><br />
-      <input type="submit" class="btn" value="Upload Photo" />
-    </form>
+    {% csrf_token %}
+    <input type="file" name="photo-file" />
+    <br /><br />
+    <input type="submit" class="btn green" value="Upload Photo" />
+  </form>
+  {% endfor %}
   </div>
   <div class="col s7">
     <div class="card">
       <div class="card-content">
-        <span class="card-title">{{ record.title}} - {{ record.artist }}</span>
+        <span class="card-title"><strong>{{ record.artist }}</strong> - <em>{{ record.title}}</em> ({{ record.release_date.year }})</span>
         <p>Release Date: {{ record.release_date }}</p>
+      
+        <p>({{ record.genre }})</p>
       </br>
-        <p>Genre: {{ record.genre }}</p>
+        <p>{{ record.description }}</p>
       </br>
-        <p>Description: {{ record.description }}</p>
-      </br>
-        <p>Notes: {{ record.notes }}</p>
-      </br>
-        <p>Condition: {{ record.condition }}</p>
       </div>
       <div class="card-action">
         <a href="{% url 'records_update' record.id %}">Edit</a>
@@ -44,6 +41,7 @@
 </div>
 <div class="card-action"></div>
 <hr />
+<p>{{ collection.record }}</p>
 <div class="row">
   <div class="col s12">
     <p>{% if collection.records.count %}</p>

@@ -35,7 +35,8 @@ def my_records(request):
 # Work version without collection integration
 def records_detail(request, record_id):
     record = Record.objects.get(id=record_id)
-    return render(request, 'records/detail.html', { 'record': record })
+    collection = Collection.objects.filter()
+    return render(request, 'records/detail.html', { 'record': record, 'collection': collection })
 
 # Collection integration
 # def records_detail(request, record_id):

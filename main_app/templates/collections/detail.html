@@ -5,9 +5,12 @@
 {% for record in collection.record.all %}
 
 <div class="card">
-  <div class="card-content">
-    <span class="card-title"> {{ record.title }}</span>
-  </div>
+  <a href="{% url 'detail' record.id %}">
+    <div class="card-content">
+      <span class="card-title">{{ record.artist }} - {{ record.title }}</span>
+      <p>Release Date: {{ record.release_date }}</p>
+    </div>
+  </a>
 </div>
 
 {% endfor %} {% endblock %}
