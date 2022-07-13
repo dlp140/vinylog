@@ -10,7 +10,8 @@
   <a href="{% url 'detail' record.id %}">
     <div class="card-content">
       <span class="card-title">
-        <strong>{{ record.artist }}</strong> - <em>{{ record.title }}</em>
+        <strong>{{ record.artist }}</strong> -
+        <em>{{ record.title }}</em> ({{record.release_date.year}})
       </span>
       <p>Release Date: {{ record.release_date }}</p>
     </div>
