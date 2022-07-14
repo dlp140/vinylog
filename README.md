@@ -7,10 +7,6 @@
 <img src='https://i.imgur.com/oD71Lxu.png' alt='Collection Index'>
 <img src='https://i.imgur.com/7TE1FON.png' alt='Collection Detail'>
 
-## Description
-
-vinyLog is an app
-
 ## Technologies Used
 
 - HTML5
