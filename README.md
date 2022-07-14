@@ -9,12 +9,13 @@
 
 ## Technologies Used
 
+- Python
+- Django
+- PostgreSQL
 - HTML5
 - CSS3
 - JavaScript
 - jQuery
-- Python
-- Django
 - Materialize
 - Google Fonts
 - Amazon Web Services
