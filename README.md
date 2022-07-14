@@ -44,6 +44,7 @@
 ## Project's Future
 
 - Authenticated users can add specific records to their collection including details (date added, condition, notes, etc.)
+- Album artwork is displayed on record index page and collection detail page.
 
 ## Deployed Link
 
