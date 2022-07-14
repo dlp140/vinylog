@@ -2,10 +2,10 @@
 
 #### An app designed to help users track their personal record collection and browse the collections of other users
 
-<!-- <img src='./images/Initial.png' alt='Initial Page'>
-<img src='./images/Loaded.png' alt='Loaded Data'>
-<img src='./images/SmallMobileInitial.png' alt='Intial Mobile Page'>
-<img src='./images/SmallMobileLoaded.png' alt='Loaded Mobile Page'> -->
+<img src='https://i.imgur.com/1HoNjq0.png' alt='Record Detail'>
+<img src='https://i.imgur.com/IyfwONf.png' alt='Record Index'>
+<img src='https://i.imgur.com/oD71Lxu.png' alt='Collection Index'>
+<img src='https://i.imgur.com/7TE1FON.png' alt='Collection Detail'>
 
 ## Description
 
@@ -21,15 +21,21 @@ vinyLog is an app
 - Django
 - Materialize
 - Google Fonts
+- Amazon Web Services
 
 ## Features
 
+- Users can sign up for an account
+- Users can log in to account
+- Authenticated users can view index of ALL previously added records
+- Authenticated users can add records
+- Authenticated users can edit or delete records they have added
+- Authenticated users can view index of records THEY have previously added
+
+<-## Wireframe
+
 -
-
-## Wireframe
-
--
-
+->
 ## Trello Planning
 
 -
