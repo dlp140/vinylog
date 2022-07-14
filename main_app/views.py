@@ -27,6 +27,7 @@ def records(request):
     records = Record.objects.all()
     photos = Photo.objects.all()
     return render(request, 'records/index.html', { 'records': records, 'photos': photos })
+    
 
 def my_records(request):
   records = Record.objects.filter(user=request.user)
